@@ -1,0 +1,85 @@
+#!/bin/bash
+
+# Thiết lập biến môi trường
+export DISPLAY=:99
+export RESOLUTION=1920x1080x24
+
+# Thêm repo testing cho Alpine
+echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
+
+# Cài đặt các gói cần thiết
+apk update && apk add --no-cache \
+    ca-certificates \
+    curl \
+    openssl \
+    sudo \
+    bash \
+    xvfb \
+    x11vnc \
+    fluxbox \
+    ttf-dejavu \
+    dbus-x11 \
+    pcmanfm \
+    lxterminal \
+    firefox \
+    openssh
+
+# Tạo user `alpine`
+adduser -h /home/alpine -s /bin/bash -S -D alpine
+echo -e "alpine\nalpine" | passwd alpine
+echo "alpine ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+
+# Thiết lập VNC password
+sudo -u alpine mkdir -p /home/alpine/.vnc
+sudo -u alpine x11vnc -storepasswd alpine /home/alpine/.vnc/passwd
+
+# Chuyển sang user `alpine` để khởi động môi trường ảo
+su - alpine -c "
+    export DISPLAY=:99
+    export RESOLUTION=1920x1080x24
+
+    nohup Xvfb :99 -screen 0 \$RESOLUTION -ac +extension GLX +render -noreset > /dev/null 2>&1 &
+    sleep 2
+
+    eval \$(dbus-launch)
+    export DBUS_SESSION_BUS_ADDRESS
+    export DBUS_SESSION_BUS_PID
+
+    nohup env DISPLAY=:99 fluxbox > /dev/null 2>&1 &
+    sleep 2
+
+    nohup x11vnc -xkb -noxrecord -noxfixes -noxdamage -display :99 -forever -bg \
+        -rfbauth /home/alpine/.vnc/passwd -users alpine -rfbport 5900 > /dev/null 2>&1 &
+
+    # --- Ghi nội dung menu Fluxbox ---
+    MENU_FILE=/home/alpine/.fluxbox/menu
+    mkdir -p \$(dirname \$MENU_FILE)
+
+    cat <<'EOF' > \$MENU_FILE
+[begin] (Fluxbox)
+[encoding] {UTF-8}
+      [exec] (Terminal) {lxterminal}
+      [exec] (Firefox) {firefox}
+      [exec] (File Manager) {pcmanfm}
+      [exec] (System monitoring) {lxterminal -e top}
+[submenu] (Fluxbox menu)
+      [config] (Configure)
+[submenu] (System Styles) {Choose a style...}
+      [stylesdir] (/usr/share/fluxbox/styles)
+[end]
+[submenu] (User Styles) {Choose a style...}
+      [stylesdir] (~/.fluxbox/styles)
+[end]
+      [workspaces] (Workspace List)
+      [commanddialog] (Fluxbox Command)
+      [reconfig] (Reload config)
+      [restart] (Restart)
+      [exec] (About) {(fluxbox -v; fluxbox -info | sed 1d) | xmessage -file - -center}
+      [separator]
+      [exit] (Exit)
+[end]
+[endencoding]
+[end]
+EOF
+    exec /bin/bash
+"

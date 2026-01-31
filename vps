@@ -1,0 +1,158 @@
+#!/bin/bash
+clear
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+RED='\033[0;31m'
+NC='\033[0m'
+
+# Kiểm tra quyền root
+function check_root() {
+    if [ "$EUID" -ne 0 ]; then
+        echo -e "${RED}Vui lòng chạy với quyền root!${NC}"
+        exit 1
+    fi
+}
+
+# Hàm kiểm tra và cài đặt package
+function install_package() {
+    package_name=$1
+    if ! command -v $package_name &> /dev/null; then
+        echo -e "${YELLOW}Đang cài đặt $package_name...${NC}"
+        apt install -y $package_name
+        if command -v $package_name &> /dev/null; then
+            echo -e "${GREEN}$package_name đã được cài đặt thành công!${NC}"
+        else
+            echo -e "${RED}Cài đặt $package_name thất bại!${NC}"
+        fi
+    else
+        echo -e "${GREEN}$package_name đã được cài đặt trước đó.${NC}"
+    fi
+}
+
+# Cập nhật hệ thống
+function system_update() {
+    echo -e "${YELLOW}Đang cập nhật hệ thống...${NC}"
+    apt update && apt upgrade -y
+}
+
+# Gỡ bỏ sudo
+function remove_sudo() {
+    export SUDO_FORCE_REMOVE=yes
+    apt remove sudo -y
+}
+
+# Cài đặt LXQt và XRDP
+function install_xrdp_lxqt() {
+    system_update
+    remove_sudo
+    install_package lxqt-core
+    install_package xrdp
+
+    echo "lxqt-session" >> /etc/xrdp/startwm.sh
+
+    echo -e "${YELLOW}Nhập port cho RDP:${NC}"
+    read selectedPort
+    sed -i "s/port=3389/port=$selectedPort/g" /etc/xrdp/xrdp.ini
+
+    service xrdp restart
+    echo -e "${GREEN}RDP với LXQt đã được tạo và chạy trên cổng $selectedPort${NC}"
+}
+
+# Cài đặt PufferPanel
+function install_pufferpanel() {
+    system_update
+    remove_sudo
+    install_package curl
+    install_package wget
+    install_package git
+    install_package python3
+
+    curl -s https://packagecloud.io/install/repositories/pufferpanel/pufferpanel/script.deb.sh | bash
+    system_update
+
+    curl -o /bin/systemctl https://raw.githubusercontent.com/gdraheim/docker-systemctl-replacement/master/files/docker/systemctl3.py
+    chmod +x /bin/systemctl
+
+    install_package pufferpanel
+
+    echo -e "${YELLOW}Nhập port cho PufferPanel:${NC}"
+    read pufferPanelPort
+    sed -i "s/\"host\": \"0.0.0.0:8080\"/\"host\": \"0.0.0.0:$pufferPanelPort\"/g" /etc/pufferpanel/config.json
+
+    echo -e "${YELLOW}Nhập tên Admin:${NC}"
+    read adminUsername
+    echo -e "${YELLOW}Nhập mật khẩu Admin:${NC}"
+    read adminPassword
+    echo -e "${YELLOW}Nhập email Admin:${NC}"
+    read adminEmail
+
+    pufferpanel user add --name "$adminUsername" --password "$adminPassword" --email "$adminEmail" --admin
+    systemctl restart pufferpanel
+
+    echo -e "${GREEN}PufferPanel đã được tạo và chạy trên cổng $pufferPanelPort${NC}"
+}
+
+# Cài đặt các gói cơ bản
+function install_basic_packages() {
+    system_update
+    install_package git
+    install_package curl
+    install_package wget
+    install_package sudo
+    install_package lsof
+    install_package iputils-ping
+
+    curl -o /bin/systemctl https://raw.githubusercontent.com/gdraheim/docker-systemctl-replacement/master/files/docker/systemctl3.py
+    chmod +x /bin/systemctl
+
+    echo -e "${GREEN}Các gói cơ bản đã được cài đặt: sudo / curl / wget / git / lsof / ping${NC}"
+}
+
+# Cài đặt Node.js
+function install_nodejs() {
+    local versions=("12" "13" "14" "15" "16" "17" "18" "19" "20")
+
+    echo "Chọn phiên bản Node.js để cài đặt:"
+    for i in "${!versions[@]}"; do
+        echo "$((i + 1)). ${versions[i]}.x"
+    done
+
+    read -p "Nhập lựa chọn của bạn (1-${#versions[@]}): " choice
+    version=${versions[$((choice-1))]}
+
+    if [[ -z "$version" ]]; then
+        echo -e "${RED}Lựa chọn không hợp lệ! Thoát.${NC}"
+        exit 1
+    fi
+
+    echo -e "${YELLOW}Đang cài đặt Node.js $version.x...${NC}"
+    apt remove --purge node* nodejs npm -y
+    system_update
+    install_package curl
+
+    curl -sL "https://deb.nodesource.com/setup_${version}.x" -o /tmp/nodesource_setup.sh
+    bash /tmp/nodesource_setup.sh
+
+    install_package nodejs
+
+    echo -e "${GREEN}Node.js phiên bản $version đã được cài đặt thành công.${NC}"
+}
+
+# Main Menu
+check_root
+
+echo "Chọn một tùy chọn:"
+echo "1) Cài đặt LXQt - XRDP"
+echo "2) Cài đặt PufferPanel"
+echo "3) Cài đặt các gói cơ bản"
+echo "4) Cài đặt Node.js"
+
+read -p "Nhập lựa chọn của bạn (1-4): " option
+
+case $option in
+    1) install_xrdp_lxqt ;;
+    2) install_pufferpanel ;;
+    3) install_basic_packages ;;
+    4) install_nodejs ;;
+    *) echo -e "${RED}Lựa chọn không hợp lệ!${NC}" ;;
+esac
