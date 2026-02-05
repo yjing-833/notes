@@ -1,1 +1,276 @@
-{"status":"success","message":"","data":{"seoOnPage":{"titleHead":"Dữ liệu phim vietsub miễn phí mới nhất. Cập nhật nhanh chóng, chất lượng cao và không quảng cáo","descriptionHead":"Website cung cấp phim miễn phí nhanh chất lượng cao. Phim online VietSub, Thuyết minh, lồng tiếng chất lượng Full HD. Nguồn phim vietsub chất lượng cao cập nhật nhanh nhất","og_type":"website","og_image":["/uploads/movies/tao-thao-thumb.jpg","/uploads/movies/moi-luc-moi-noi-phan-4-thumb.jpg","/uploads/movies/pha-an-tu-thumb.jpg","/uploads/movies/vien-son-di-van-luc-thumb.jpg","/uploads/movies/transit-love-phan-1-thumb.jpg","/uploads/movies/sanctuary-thi-tran-phu-thuy-phan-2-thumb.jpg","/uploads/movies/sup-do-phan-2-thumb.jpg","/uploads/movies/hoc-vien-thuong-luu-thumb.jpg","/uploads/movies/tham-kich-gau-nau-thumb.jpg","/uploads/movies/an-phat-dung-gia-thumb.jpg","/uploads/movies/hay-noi-anh-yeu-em-luc-hoang-hon-thumb.jpg","/uploads/movies/thai-binh-nien-thumb-1769242901356.jpg","/uploads/movies/hoang-hau-gia-lam-thumb.jpg","/uploads/movies/khong-quen-thumb.jpg","/uploads/movies/nu-hoang-tien-mat-thumb.jpg","/uploads/movies/xuyen-khong-ve-1995-de-yeu-anh-thumb.jpg","/uploads/movies/ban-than-yeu-thuong-mua-3-thumb.jpg","/uploads/movies/chung-ta-ngang-tai-ngang-suc-phan-2-thumb.jpg","/uploads/movies/gui-ten-trom-yeu-dau-cua-ta-thumb.jpg","/uploads/movies/con-say-mua-xuan-thumb.jpg","/uploads/movies/dem-giang-sinh-dam-mau-thumb.jpg","/uploads/movies/tuoi-tre-tai-cao-thumb.jpg","/uploads/movies/tan-tich-cua-gio-thumb.jpg","/uploads/movies/sac-dem-ngap-tran-thumb.jpg"]},"items":[{"tmdb":{"type":"tv","id":"103800","season":1,"vote_average":8,"vote_count":2},"imdb":{"id":"","vote_average":0,"vote_count":0},"modified":{"time":"2026-02-05T22:15:30.000Z"},"_id":"6984609bf937c3b5a10956c1","name":"Tào Tháo","slug":"tao-thao","origin_name":"Cao Cao","alternative_names":["盖世英雄曹操","英雄曹操"],"type":"series","thumb_url":"tao-thao-thumb.jpg","sub_docquyen":false,"time":"45 phút/tập","episode_current":"Hoàn tất (41/41)","quality":"HD","lang":"Vietsub","year":2013,"category":[{"id":"620f3d2b91fa4af90ab697fe","name":"Chính kịch","slug":"chinh-kich"}],"country":[{"id":"62093063196e9f4ab6b448b8","name":"Trung Quốc","slug":"trung-quoc"}]},{"tmdb":{"type":"tv","id":"247805","season":4,"vote_average":8.3,"vote_count":7},"imdb":{"id":"tt34460456","vote_average":0,"vote_count":31},"modified":{"time":"2026-02-05T21:45:42.000Z"},"_id":"6943a6f5d6caf55037c2b7bb","name":"Mọi Lúc Mọi Nơi (Phần 4)","slug":"moi-luc-moi-noi-phan-4","origin_name":"Whenever Possible (Season 4)","alternative_names":["Kapanpun memungkinkan.","틈만나면","","틈만 나면","Whenever Possible","只要有空，","Teumman Namyeon","Whenever There's a Chance"],"type":"series","thumb_url":"moi-luc-moi-noi-phan-4-thumb.jpg","sub_docquyen":true,"time":"90 phút/tập","episode_current":"Tập 42","quality":"HD","lang":"Vietsub","year":2025,"category":[{"id":"620a220de0fc277084dfd16d","name":"Tình Cảm","slug":"tinh-cam"},{"id":"620a221de0fc277084dfd1c1","name":"Hài Hước","slug":"hai-huoc"}],"country":[{"id":"620a2300e0fc277084dfd6d2","name":"Hàn Quốc","slug":"han-quoc"}]},{"tmdb":{"type":"tv","id":"278146","season":1,"vote_average":9.9,"vote_count":7},"imdb":{"id":"tt34929457","vote_average":0,"vote_count":0},"modified":{"time":"2026-02-05T21:33:30.000Z"},"_id":"6945419597c71dcd0d636162","name":"Phá Án Tử","slug":"pha-an-tu","origin_name":"Dare You to Death","alternative_names":["Khai Khadi Pen Hen Khadi Tai"],"type":"series","thumb_url":"pha-an-tu-thumb.jpg","sub_docquyen":false,"time":"47 phút/tập","episode_current":"Tập 6","quality":"HD","lang":"Vietsub","year":2025,"category":[{"id":"620a2249e0fc277084dfd2e5","name":"Hình Sự","slug":"hinh-su"},{"id":"620f3d2b91fa4af90ab697fe","name":"Chính kịch","slug":"chinh-kich"},{"id":"620f84d291fa4af90ab6b3f4","name":"Bí ẩn","slug":"bi-an"}],"country":[{"id":"620a2318e0fc277084dfd77a","name":"Thái Lan","slug":"thai-lan"}]},{"tmdb":{"type":"movie","id":"1621496","season":null,"vote_average":5,"vote_count":1},"imdb":{"id":"","vote_average":0,"vote_count":0},"modified":{"time":"2026-02-05T21:33:02.000Z"},"_id":"6984a57cb06c99c722ef57da","name":"Viên Sơn Dị Văn Lục","slug":"vien-son-di-van-luc","origin_name":"Anecdotes of Ape Mountain","alternative_names":["Tales of the Monkey Mountain"],"type":"single","thumb_url":"vien-son-di-van-luc-thumb.jpg","sub_docquyen":false,"time":"0 Phút","episode_current":"Full","quality":"HD","lang":"Vietsub","year":2026,"category":[{"id":"620a21b2e0fc277084dfd0c5","name":"Hành Động","slug":"hanh-dong"},{"id":"620a2293e0fc277084dfd489","name":"Phiêu Lưu","slug":"phieu-luu"}],"country":[{"id":"62093063196e9f4ab6b448b8","name":"Trung Quốc","slug":"trung-quoc"}]},{"tmdb":{"type":"tv","id":"128119","season":1,"vote_average":8.571,"vote_count":7},"imdb":{"id":"tt28893202","vote_average":0,"vote_count":57},"modified":{"time":"2026-02-05T21:32:34.000Z"},"_id":"68eb9aca7554a460a6e8727e","name":"Transit Love (Phần 1)","slug":"transit-love-phan-1","origin_name":"EXchange (Season 1)","type":"series","thumb_url":"transit-love-phan-1-thumb.jpg","sub_docquyen":false,"time":"114 phút/tập","episode_current":"Hoàn tất (15/15)","quality":"HD","lang":"Vietsub","year":2021,"category":[{"id":"620f3d2b91fa4af90ab697fe","name":"Chính kịch","slug":"chinh-kich"}],"country":[{"id":"620a2300e0fc277084dfd6d2","name":"Hàn Quốc","slug":"han-quoc"}],"alternative_names":["换乘恋爱","EXchange","乗り換え恋愛","환승연애 시즌2","환승연애","換乘戀愛","Transit Love","Transferring Love","Love Transferring","Love Transit","Romance Transfer","Transfer Romance"]},{"tmdb":{"type":"tv","id":"238585","season":2,"vote_average":6.2,"vote_count":27},"imdb":{"id":"tt21632986","vote_average":6.1,"vote_count":1763},"modified":{"time":"2026-02-05T21:24:25.000Z"},"_id":"697346d4f65d22d617a601e7","name":"Sanctuary: Thị Trấn Phù Thủy (Phần 2)","slug":"sanctuary-thi-tran-phu-thuy-phan-2","origin_name":"Sanctuary: A Witch's Tale (Season 2)","alternative_names":["Sanctuary","Historia De Una Bruja","Sanctuary: A Witch's Tale","Sanctuary: Historia de una bruja","Санктуарий: История ведьмы"],"type":"series","thumb_url":"sanctuary-thi-tran-phu-thuy-phan-2-thumb.jpg","sub_docquyen":true,"time":"45 phút/tập","episode_current":"Tập 4","quality":"HD","lang":"Vietsub","year":2026,"category":[{"id":"620a2282e0fc277084dfd435","name":"Viễn Tưởng","slug":"vien-tuong"},{"id":"620a229be0fc277084dfd4dd","name":"Khoa Học","slug":"khoa-hoc"},{"id":"620f3d2b91fa4af90ab697fe","name":"Chính kịch","slug":"chinh-kich"}],"country":[{"id":"620a231fe0fc277084dfd7ce","name":"Âu Mỹ","slug":"au-my"},{"id":"620a2370e0fc277084dfd91e","name":"Anh","slug":"anh"}]},{"tmdb":{"type":"tv","id":"106379","season":2,"vote_average":8.1,"vote_count":2477},"imdb":{"id":"tt12637874","vote_average":8.3,"vote_count":370146},"modified":{"time":"2026-02-05T21:18:52.000Z"},"_id":"6943a2a45172e5ec10850703","name":"Fallout (Phần 2)","slug":"sup-do-phan-2","origin_name":"Fallout (Season 2)","alternative_names":["辐射","Fallout","Follaut","フォールアウト","Фоллаут","異塵餘生","Фолаут","Sụp Đổ"],"type":"series","thumb_url":"sup-do-phan-2-thumb.jpg","sub_docquyen":false,"time":"62 phút/tập","episode_current":"Hoàn tất (8/8)","quality":"HD","lang":"Vietsub","year":2025,"category":[{"id":"620a21b2e0fc277084dfd0c5","name":"Hành Động","slug":"hanh-dong"},{"id":"620a2293e0fc277084dfd489","name":"Phiêu Lưu","slug":"phieu-luu"},{"id":"620f3d2b91fa4af90ab697fe","name":"Chính kịch","slug":"chinh-kich"}],"country":[{"id":"620a231fe0fc277084dfd7ce","name":"Âu Mỹ","slug":"au-my"}]},{"tmdb":{"type":"tv","id":"311142","season":1,"vote_average":0,"vote_count":0},"imdb":{"id":"","vote_average":0,"vote_count":0},"modified":{"time":"2026-02-05T20:52:33.000Z"},"_id":"697230fc4da3bf6eb332c95a","name":"Học Viện Thượng Lưu","slug":"hoc-vien-thuong-luu","origin_name":"The School","alternative_names":["ศักดินาวิทยาลัย"],"type":"series","thumb_url":"hoc-vien-thuong-luu-thumb.jpg","sub_docquyen":false,"time":"? phút/tập","episode_current":"Tập 6","quality":"HD","lang":"Vietsub","year":2026,"category":[{"id":"620f3d2b91fa4af90ab697fe","name":"Chính kịch","slug":"chinh-kich"}],"country":[{"id":"620a2318e0fc277084dfd77a","name":"Thái Lan","slug":"thai-lan"}]},{"tmdb":{"type":"movie","id":"1249508","season":null,"vote_average":7.4,"vote_count":9},"imdb":{"id":"tt28500290","vote_average":0,"vote_count":0},"modified":{"time":"2026-02-05T20:48:47.000Z"},"_id":"69846bfe54ca9185bbac0857","name":"Thảm Kịch Gấu Nâu","slug":"tham-kich-gau-nau","origin_name":"Grizzly Night","alternative_names":["No Escape - Grizzly Night","Urso Sangrento: A Noite do Terror"],"type":"single","thumb_url":"tham-kich-gau-nau-thumb.jpg","sub_docquyen":false,"time":"93 Phút","episode_current":"Full","quality":"HD","lang":"Vietsub","year":2026,"category":[{"id":"620a22ace0fc277084dfd531","name":"Kinh Dị","slug":"kinh-di"}],"country":[{"id":"620a231fe0fc277084dfd7ce","name":"Âu Mỹ","slug":"au-my"}]},{"tmdb":{"type":"tv","id":"249907","season":1,"vote_average":9,"vote_count":32},"imdb":{"id":"tt32536168","vote_average":8.9,"vote_count":530},"modified":{"time":"2026-02-05T20:48:25.000Z"},"_id":"69592eec0a0114095c701ba0","name":"Án Phạt Dũng Giả","slug":"an-phat-dung-gia","origin_name":"Sentenced to Be a Hero","alternative_names":["Yūsha-kei ni Shosu: Chōbatsu Yūsha 9004-tai Keimu Kiroku","Yuusha-kei ni Shosu: Choubatsu Yuusha 9004-tai Keimu Kiroku","Yuusha Kei ni Shosu: Choubatsu Yuusha 9004-tai Keimu Kiroku","勇者刑","YuushaKei","Sentenced to Brave Punishment","Punishment for Brave Hero: 9004 Corps Prison Record","Sentenced to Hero Punishment: The Service Records of the 9004th Penitent Hero Corps","Hero Punishment","Sentenced to Be a Hero: The Prison Records of Penal Hero Unit 9004","Sentenciados a Heróis","勇者处刑 惩罚勇者9004队服刑记录","YushaKei-pj","Yushakei","Yuusha-kei ni Shosu: Choubatsu Yuusha 9004 Tai Keimu Kiroku","Yûsha-kei ni Shosu Chôbatsu Yûsha 9004-tai Keimu Kiroku","Yūsha-kei ni Shosu Chōbatsu Yūsha 9004-tai Keimu Kiroku","Yūshakei ni Shosu Chōbatsu Yūsha 9004 Tai Keimu Kiroku","ゆうしゃけいにしょす ちょうばつゆうしゃきゅうまるまるよんたいけいむきろく","Приговорённый быть героем: Тюремные записи девять тысяч четвёртого штрафного отряда героев"],"type":"hoathinh","thumb_url":"an-phat-dung-gia-thumb.jpg","sub_docquyen":false,"time":"? phút/tập","episode_current":"Tập 5","quality":"HD","lang":"Vietsub","year":2026,"category":[{"id":"620a21b2e0fc277084dfd0c5","name":"Hành Động","slug":"hanh-dong"},{"id":"620a221de0fc277084dfd1c1","name":"Hài Hước","slug":"hai-huoc"},{"id":"620a2282e0fc277084dfd435","name":"Viễn Tưởng","slug":"vien-tuong"},{"id":"620a2293e0fc277084dfd489","name":"Phiêu Lưu","slug":"phieu-luu"},{"id":"620a229be0fc277084dfd4dd","name":"Khoa Học","slug":"khoa-hoc"}],"country":[{"id":"620a2307e0fc277084dfd726","name":"Nhật Bản","slug":"nhat-ban"}]},{"tmdb":{"type":"tv","id":"309015","season":1,"vote_average":0,"vote_count":0},"imdb":{"id":"","vote_average":0,"vote_count":0},"modified":{"time":"2026-02-05T20:36:21.000Z"},"_id":"69849cd2ccc6cea26874ef34","name":"Hãy nói \"Anh yêu em\" lúc hoàng hôn.","slug":"hay-noi-anh-yeu-em-luc-hoang-hon","origin_name":"Forever by Your Side","alternative_names":["Tell You I Love You at Sunset"],"type":"tvshows","thumb_url":"hay-noi-anh-yeu-em-luc-hoang-hon-thumb.jpg","sub_docquyen":false,"time":"67 phút/tập","episode_current":"Trailer","quality":"HD","lang":"Vietsub","year":2025,"category":[{"id":"620a220de0fc277084dfd16d","name":"Tình Cảm","slug":"tinh-cam"},{"id":"620e0e64d9648f114cde7728","name":"Tài Liệu","slug":"tai-lieu"}],"country":[{"id":"62093063196e9f4ab6b448b8","name":"Trung Quốc","slug":"trung-quoc"}]},{"tmdb":{"type":"tv","id":"279446","season":1,"vote_average":8.5,"vote_count":4},"imdb":{"id":"tt32561981","vote_average":0,"vote_count":0},"modified":{"time":"2026-02-05T20:32:15.000Z"},"_id":"69739761ccc6cea2687395e3","name":"Thái Bình Niên","slug":"thai-binh-nien","origin_name":"Swords Into Plowshares","alternative_names":["吴越归宗之太平年","The Age of Peace"],"type":"series","thumb_url":"thai-binh-nien-thumb-1769242901356.jpg","sub_docquyen":false,"time":"45 phút/tập","episode_current":"Tập 31","quality":"HD","lang":"Vietsub + Thuyết Minh","year":2026,"category":[{"id":"620f3d2b91fa4af90ab697fe","name":"Chính kịch","slug":"chinh-kich"}],"country":[{"id":"62093063196e9f4ab6b448b8","name":"Trung Quốc","slug":"trung-quoc"}]},{"tmdb":{"type":"tv","id":"295890","season":1,"vote_average":0,"vote_count":0},"imdb":{"id":"","vote_average":0,"vote_count":0},"modified":{"time":"2026-02-05T20:27:17.000Z"},"_id":"69763111ae6f0c1fdf36dc1e","name":"Hoàng Hậu Giá Lâm","slug":"hoang-hau-gia-lam","origin_name":"皇后驾到","alternative_names":["Huang Hou Jia Dao","皇后驾到"],"type":"series","thumb_url":"hoang-hau-gia-lam-thumb.jpg","sub_docquyen":true,"time":"? phút/tập","episode_current":"Hoàn tất (24/24)","quality":"HD","lang":"Vietsub","year":2026,"category":[{"id":"620f3d2b91fa4af90ab697fe","name":"Chính kịch","slug":"chinh-kich"}],"country":[{"id":"62093063196e9f4ab6b448b8","name":"Trung Quốc","slug":"trung-quoc"}]},{"tmdb":{"type":"tv","id":"274776","season":1,"vote_average":0,"vote_count":0},"imdb":{"id":"tt37024136","vote_average":0,"vote_count":0},"modified":{"time":"2026-02-05T20:25:17.000Z"},"_id":"69845d5ed88856be7713a076","name":"Không quen","slug":"khong-quen","origin_name":"Unfamiliar","alternative_names":["Bone Palace"],"type":"series","thumb_url":"khong-quen-thumb.jpg","sub_docquyen":false,"time":"? phút/tập","episode_current":"Hoàn tất (6/6)","quality":"HD","lang":"Vietsub","year":2026,"category":[{"id":"620a21b2e0fc277084dfd0c5","name":"Hành Động","slug":"hanh-dong"},{"id":"620a2293e0fc277084dfd489","name":"Phiêu Lưu","slug":"phieu-luu"},{"id":"620f3d2b91fa4af90ab697fe","name":"Chính kịch","slug":"chinh-kich"}],"country":[{"id":"620e0e8fd9648f114cde77f7","name":"Đức","slug":"duc"}]},{"tmdb":{"type":"tv","id":"269160","season":1,"vote_average":0,"vote_count":0},"imdb":{"id":"tt34139155","vote_average":0,"vote_count":0},"modified":{"time":"2026-02-05T20:24:04.000Z"},"_id":"69845dc8f07c400a86c450ae","name":"Nữ hoàng tiền mặt","slug":"nu-hoang-tien-mat","origin_name":"Cash Queens","alternative_names":["抢钱女王团"],"type":"series","thumb_url":"nu-hoang-tien-mat-thumb.jpg","sub_docquyen":false,"time":"52 phút/tập","episode_current":"Hoàn tất (8/8)","quality":"HD","lang":"Vietsub","year":2026,"category":[{"id":"620a21b2e0fc277084dfd0c5","name":"Hành Động","slug":"hanh-dong"},{"id":"620a221de0fc277084dfd1c1","name":"Hài Hước","slug":"hai-huoc"},{"id":"620a2293e0fc277084dfd489","name":"Phiêu Lưu","slug":"phieu-luu"}],"country":[{"id":"620a2378e0fc277084dfd972","name":"Pháp","slug":"phap"}]},{"tmdb":{"type":"tv","id":"284735","season":1,"vote_average":10,"vote_count":1},"imdb":{"id":"","vote_average":0,"vote_count":0},"modified":{"time":"2026-02-05T20:11:47.000Z"},"_id":"697a1161eea244e3e8a6b5f4","name":"Xuyên Không Về 1995 Để Yêu Anh","slug":"xuyen-khong-ve-1995-de-yeu-anh","origin_name":"Once More Love in 1995","alternative_names":["穿越时光回到1995爱上你","Huo Dao Ai 1995 Ai Shang Ni","Fall in Love With You Back in 1995","回到1995爱上你"],"type":"series","thumb_url":"xuyen-khong-ve-1995-de-yeu-anh-thumb.jpg","sub_docquyen":true,"time":"? phút/tập","episode_current":"Hoàn tất (24/24)","quality":"HD","lang":"Vietsub","year":2026,"category":[{"id":"620f3d2b91fa4af90ab697fe","name":"Chính kịch","slug":"chinh-kich"}],"country":[{"id":"62093063196e9f4ab6b448b8","name":"Trung Quốc","slug":"trung-quoc"}]},{"tmdb":{"type":"tv","id":"229043","season":1,"vote_average":0,"vote_count":0},"imdb":{"id":"","vote_average":0,"vote_count":0},"modified":{"time":"2026-02-05T20:09:45.000Z"},"_id":"692d8631e3594b9235944b06","name":"Bạn Thân Yêu Thương (Mùa 3)","slug":"ban-than-yeu-thuong-mua-3","origin_name":"Best Friends","alternative_names":["Hao You Hao You Ai"],"type":"series","thumb_url":"ban-than-yeu-thuong-mua-3-thumb.jpg","sub_docquyen":true,"time":"50 phút/tập","episode_current":"Hoàn tất (10/10)","quality":"HD","lang":"Vietsub","year":2023,"category":[{"id":"620a220de0fc277084dfd16d","name":"Tình Cảm","slug":"tinh-cam"}],"country":[{"id":"62093063196e9f4ab6b448b8","name":"Trung Quốc","slug":"trung-quoc"}]},{"tmdb":{"type":"tv","id":"254532","season":2,"vote_average":0,"vote_count":0},"imdb":{"id":"","vote_average":0,"vote_count":0},"modified":{"time":"2026-02-05T20:09:26.000Z"},"_id":"695be65bf65d22d617a4122c","name":"Chúng Ta Ngang Tài Ngang Sức (Phần 2)","slug":"chung-ta-ngang-tai-ngang-suc-phan-2","origin_name":"Live and Love (Season 2)","alternative_names":["Shi Jun Li Di De Wo Men"],"type":"series","thumb_url":"chung-ta-ngang-tai-ngang-suc-phan-2-thumb.jpg","sub_docquyen":true,"time":"60 phút/tập","episode_current":"Tập 5","quality":"HD","lang":"Vietsub","year":2026,"category":[{"id":"620a220de0fc277084dfd16d","name":"Tình Cảm","slug":"tinh-cam"}],"country":[{"id":"62093063196e9f4ab6b448b8","name":"Trung Quốc","slug":"trung-quoc"}]},{"tmdb":{"type":"tv","id":"301886","season":1,"vote_average":9.5,"vote_count":4},"imdb":{"id":"tt39303266","vote_average":0,"vote_count":0},"modified":{"time":"2026-02-05T17:41:49.000Z"},"_id":"695a54a6da6ce23e8e94ae5a","name":"Gửi Tên Trộm Yêu Dấu Của Ta","slug":"gui-ten-trom-yeu-dau-cua-ta","origin_name":"To My Beloved Thief","alternative_names":["亲爱的盗贼大人","은애하는 도적님아"],"type":"series","thumb_url":"gui-ten-trom-yeu-dau-cua-ta-thumb.jpg","sub_docquyen":true,"time":"62 phút/tập","episode_current":"Tập 10","quality":"HD","lang":"Vietsub","year":2026,"category":[{"id":"620a221de0fc277084dfd1c1","name":"Hài Hước","slug":"hai-huoc"},{"id":"620a2282e0fc277084dfd435","name":"Viễn Tưởng","slug":"vien-tuong"},{"id":"620a229be0fc277084dfd4dd","name":"Khoa Học","slug":"khoa-hoc"}],"country":[{"id":"620a2300e0fc277084dfd6d2","name":"Hàn Quốc","slug":"han-quoc"}]},{"tmdb":{"type":"tv","id":"280948","season":1,"vote_average":7.9,"vote_count":11},"imdb":{"id":"tt39137681","vote_average":0,"vote_count":0},"modified":{"time":"2026-02-05T17:35:11.000Z"},"_id":"695c9827124287e082503599","name":"Cơn Say Mùa Xuân","slug":"con-say-mua-xuan","origin_name":"Spring Fever","alternative_names":["Frühlingsgefühle","Seupeuring Pibeo"],"type":"series","thumb_url":"con-say-mua-xuan-thumb.jpg","sub_docquyen":true,"time":"61 phút/tập","episode_current":"Tập 10","quality":"HD","lang":"Vietsub","year":2026,"category":[{"id":"620a221de0fc277084dfd1c1","name":"Hài Hước","slug":"hai-huoc"},{"id":"620f3d2b91fa4af90ab697fe","name":"Chính kịch","slug":"chinh-kich"}],"country":[{"id":"620a2300e0fc277084dfd6d2","name":"Hàn Quốc","slug":"han-quoc"}]},{"tmdb":{"type":"movie","id":"801937","season":null,"vote_average":6.254,"vote_count":61},"imdb":{"id":"tt34508974","vote_average":0,"vote_count":0},"modified":{"time":"2026-02-05T17:08:35.000Z"},"_id":"698204fe988d934ea9e640af","name":"Đêm Giáng Sinh Đẫm Máu","slug":"dem-giang-sinh-dam-mau","origin_name":"Silent Night, Deadly Night","alternative_names":["Natal Sangrento","Noche De Paz","Noche De Horror","Noche de paz","noche de horror","Noche de Paz","Noche de Horror","Tichá noc","krvavá noc","Püha öö õuduste öö","Tiha noć","smrtonosna noć","Csendes éj","véres éj","Laila Lo Sha'ket","Тихая ночь","смертельная ночь","Tyli naktis. Siaubo naktis","Klusa nakts","šausmu nakts","Cicha noc","śmierci noc","Noite de Amor","Noite de Terror","Crăciun sângeros","Sessiz Gece","Kanlı Gece","Однієї тихої ночі"],"type":"single","thumb_url":"dem-giang-sinh-dam-mau-thumb.jpg","sub_docquyen":false,"time":"96 Phút","episode_current":"Full","quality":"HD","lang":"Vietsub","year":2025,"category":[{"id":"620a22ace0fc277084dfd531","name":"Kinh Dị","slug":"kinh-di"}],"country":[{"id":"620a231fe0fc277084dfd7ce","name":"Âu Mỹ","slug":"au-my"},{"id":"620a2378e0fc277084dfd972","name":"Pháp","slug":"phap"},{"id":"620a2381e0fc277084dfd9c6","name":"Canada","slug":"canada"}]},{"tmdb":{"type":"tv","id":"278882","season":1,"vote_average":9,"vote_count":1},"imdb":{"id":"tt34903451","vote_average":0,"vote_count":0},"modified":{"time":"2026-02-05T17:05:15.000Z"},"_id":"697da92cd88856be77131748","name":"Tuổi Trẻ Tài Cao","slug":"tuoi-tre-tai-cao","origin_name":"No Pain No Gain","alternative_names":["亏成首富从游戏开始","Nian Shao You Wei","Kui Cheng Shou Fu Cong You Xi Kai Shi","The Richest Poor Guy","The Poor Winner"],"type":"series","thumb_url":"tuoi-tre-tai-cao-thumb.jpg","sub_docquyen":false,"time":"? phút/tập","episode_current":"Tập 12","quality":"HD","lang":"Vietsub","year":2026,"category":[{"id":"620a221de0fc277084dfd1c1","name":"Hài Hước","slug":"hai-huoc"},{"id":"620a2282e0fc277084dfd435","name":"Viễn Tưởng","slug":"vien-tuong"},{"id":"620a229be0fc277084dfd4dd","name":"Khoa Học","slug":"khoa-hoc"},{"id":"620f3d2b91fa4af90ab697fe","name":"Chính kịch","slug":"chinh-kich"}],"country":[{"id":"62093063196e9f4ab6b448b8","name":"Trung Quốc","slug":"trung-quoc"}]},{"tmdb":{"type":"tv","id":"261676","season":1,"vote_average":9,"vote_count":1},"imdb":{"id":"tt27936835","vote_average":0,"vote_count":0},"modified":{"time":"2026-02-05T17:04:26.000Z"},"_id":"6981cce4d88856be77137069","name":"Tàn Tích Của Gió","slug":"tan-tich-cua-gio","origin_name":"The Truth","alternative_names":["尸案调查科","Shi an Diao Cha Ke"],"type":"series","thumb_url":"tan-tich-cua-gio-thumb.jpg","sub_docquyen":false,"time":"? phút/tập","episode_current":"Tập 8","quality":"HD","lang":"Vietsub","year":2026,"category":[{"id":"620a2249e0fc277084dfd2e5","name":"Hình Sự","slug":"hinh-su"},{"id":"620f84d291fa4af90ab6b3f4","name":"Bí ẩn","slug":"bi-an"}],"country":[{"id":"62093063196e9f4ab6b448b8","name":"Trung Quốc","slug":"trung-quoc"}]},{"tmdb":{"type":"tv","id":"259554","season":1,"vote_average":9,"vote_count":1},"imdb":{"id":"tt30829335","vote_average":0,"vote_count":0},"modified":{"time":"2026-02-05T17:04:04.000Z"},"_id":"6979e28646046a8eb68576e4","name":"Sắc Đêm Ngập Tràn","slug":"sac-dem-ngap-tran","origin_name":"The Glamorous Night","alternative_names":["Sales夫妇","The Sales","Ye se zheng nong","夜色正浓","Ye Se Zheng Nong"],"type":"series","thumb_url":"sac-dem-ngap-tran-thumb.jpg","sub_docquyen":false,"time":"? phút/tập","episode_current":"Tập 17","quality":"HD","lang":"Vietsub","year":2026,"category":[{"id":"620f3d2b91fa4af90ab697fe","name":"Chính kịch","slug":"chinh-kich"}],"country":[{"id":"62093063196e9f4ab6b448b8","name":"Trung Quốc","slug":"trung-quoc"}]}],"itemsSportsVideos":[],"params":{"type_slug":"danh-sach","filterCategory":[],"filterCountry":[],"filterYear":"","sortField":"","pagination":{"totalItems":34485,"totalItemsPerPage":24,"currentPage":1,"pageRanges":5},"itemsUpdateInDay":54,"totalSportsVideos":0,"itemsSportsVideosUpdateInDay":0},"type_list":"phim-moi","APP_DOMAIN_FRONTEND":"https://ophim17.cc","APP_DOMAIN_CDN_IMAGE":"https://img.ophim.live"}}
+{
+  "status": "success",
+  "items": [
+    {
+      "tmdb": { "type": "tv", "id": "103800", "season": 1, "vote_average": 8, "vote_count": 2 },
+      "imdb": { "id": "", "vote_average": 0, "vote_count": 0 },
+      "modified": { "time": "2026-02-05T22:15:30.000Z" },
+      "_id": "6984609bf937c3b5a10956c1",
+      "name": "Tào Tháo",
+      "slug": "tao-thao",
+      "origin_name": "Cao Cao",
+      "thumb_url": "tao-thao-thumb.jpg",
+      "year": 2013
+    },
+    {
+      "tmdb": { "type": "tv", "id": "247805", "season": 4, "vote_average": 8.3, "vote_count": 7 },
+      "imdb": { "id": "tt34460456", "vote_average": 0, "vote_count": 31 },
+      "modified": { "time": "2026-02-05T21:45:42.000Z" },
+      "_id": "6943a6f5d6caf55037c2b7bb",
+      "name": "Mọi Lúc Mọi Nơi (Phần 4)",
+      "slug": "moi-luc-moi-noi-phan-4",
+      "origin_name": "Whenever Possible (Season 4)",
+      "thumb_url": "moi-luc-moi-noi-phan-4-thumb.jpg",
+      "year": 2025
+    },
+    {
+      "tmdb": { "type": "tv", "id": "278146", "season": 1, "vote_average": 9.9, "vote_count": 7 },
+      "imdb": { "id": "tt34929457", "vote_average": 0, "vote_count": 0 },
+      "modified": { "time": "2026-02-05T21:33:30.000Z" },
+      "_id": "6945419597c71dcd0d636162",
+      "name": "Phá Án Tử",
+      "slug": "pha-an-tu",
+      "origin_name": "Dare You to Death",
+      "thumb_url": "pha-an-tu-thumb.jpg",
+      "year": 2025
+    },
+    {
+      "tmdb": { "type": "movie", "id": "1621496", "season": null, "vote_average": 5, "vote_count": 1 },
+      "imdb": { "id": "", "vote_average": 0, "vote_count": 0 },
+      "modified": { "time": "2026-02-05T21:33:02.000Z" },
+      "_id": "6984a57cb06c99c722ef57da",
+      "name": "Viên Sơn Dị Văn Lục",
+      "slug": "vien-son-di-van-luc",
+      "origin_name": "Anecdotes of Ape Mountain",
+      "thumb_url": "vien-son-di-van-luc-thumb.jpg",
+      "year": 2026
+    },
+    {
+      "tmdb": { "type": "tv", "id": "128119", "season": 1, "vote_average": 8.571, "vote_count": 7 },
+      "imdb": { "id": "tt28893202", "vote_average": 0, "vote_count": 57 },
+      "modified": { "time": "2026-02-05T21:32:34.000Z" },
+      "_id": "68eb9aca7554a460a6e8727e",
+      "name": "Transit Love (Phần 1)",
+      "slug": "transit-love-phan-1",
+      "origin_name": "EXchange (Season 1)",
+      "thumb_url": "transit-love-phan-1-thumb.jpg",
+      "year": 2021
+    },
+    {
+      "tmdb": { "type": "tv", "id": "238585", "season": 2, "vote_average": 6.2, "vote_count": 27 },
+      "imdb": { "id": "tt21632986", "vote_average": 6.1, "vote_count": 1763 },
+      "modified": { "time": "2026-02-05T21:24:25.000Z" },
+      "_id": "697346d4f65d22d617a601e7",
+      "name": "Sanctuary: Thị Trấn Phù Thủy (Phần 2)",
+      "slug": "sanctuary-thi-tran-phu-thuy-phan-2",
+      "origin_name": "Sanctuary: A Witch's Tale (Season 2)",
+      "thumb_url": "sanctuary-thi-tran-phu-thuy-phan-2-thumb.jpg",
+      "year": 2026
+    },
+    {
+      "tmdb": { "type": "tv", "id": "106379", "season": 2, "vote_average": 8.1, "vote_count": 2477 },
+      "imdb": { "id": "tt12637874", "vote_average": 8.3, "vote_count": 370146 },
+      "modified": { "time": "2026-02-05T21:18:52.000Z" },
+      "_id": "6943a2a45172e5ec10850703",
+      "name": "Fallout (Phần 2)",
+      "slug": "sup-do-phan-2",
+      "origin_name": "Fallout (Season 2)",
+      "thumb_url": "sup-do-phan-2-thumb.jpg",
+      "year": 2025
+    },
+    {
+      "tmdb": { "type": "tv", "id": "311142", "season": 1, "vote_average": 0, "vote_count": 0 },
+      "imdb": { "id": "", "vote_average": 0, "vote_count": 0 },
+      "modified": { "time": "2026-02-05T20:52:33.000Z" },
+      "_id": "697230fc4da3bf6eb332c95a",
+      "name": "Học Viện Thượng Lưu",
+      "slug": "hoc-vien-thuong-luu",
+      "origin_name": "The School",
+      "thumb_url": "hoc-vien-thuong-luu-thumb.jpg",
+      "year": 2026
+    },
+    {
+      "tmdb": { "type": "movie", "id": "1249508", "season": null, "vote_average": 7.4, "vote_count": 9 },
+      "imdb": { "id": "tt28500290", "vote_average": 0, "vote_count": 0 },
+      "modified": { "time": "2026-02-05T20:48:47.000Z" },
+      "_id": "69846bfe54ca9185bbac0857",
+      "name": "Thảm Kịch Gấu Nâu",
+      "slug": "tham-kich-gau-nau",
+      "origin_name": "Grizzly Night",
+      "thumb_url": "tham-kich-gau-nau-thumb.jpg",
+      "year": 2026
+    },
+    {
+      "tmdb": { "type": "tv", "id": "249907", "season": 1, "vote_average": 9, "vote_count": 32 },
+      "imdb": { "id": "tt32536168", "vote_average": 8.9, "vote_count": 530 },
+      "modified": { "time": "2026-02-05T20:48:25.000Z" },
+      "_id": "69592eec0a0114095c701ba0",
+      "name": "Án Phạt Dũng Giả",
+      "slug": "an-phat-dung-gia",
+      "origin_name": "Sentenced to Be a Hero",
+      "thumb_url": "an-phat-dung-gia-thumb.jpg",
+      "year": 2026
+    },
+    {
+      "tmdb": { "type": "tv", "id": "309015", "season": 1, "vote_average": 0, "vote_count": 0 },
+      "imdb": { "id": "", "vote_average": 0, "vote_count": 0 },
+      "modified": { "time": "2026-02-05T20:36:21.000Z" },
+      "_id": "69849cd2ccc6cea26874ef34",
+      "name": "Hãy nói \"Anh yêu em\" lúc hoàng hôn.",
+      "slug": "hay-noi-anh-yeu-em-luc-hoang-hon",
+      "origin_name": "Forever by Your Side",
+      "thumb_url": "hay-noi-anh-yeu-em-luc-hoang-hon-thumb.jpg",
+      "year": 2025
+    },
+    {
+      "tmdb": { "type": "tv", "id": "279446", "season": 1, "vote_average": 8.5, "vote_count": 4 },
+      "imdb": { "id": "tt32561981", "vote_average": 0, "vote_count": 0 },
+      "modified": { "time": "2026-02-05T20:32:15.000Z" },
+      "_id": "69739761ccc6cea2687395e3",
+      "name": "Thái Bình Niên",
+      "slug": "thai-binh-nien",
+      "origin_name": "Swords Into Plowshares",
+      "thumb_url": "thai-binh-nien-thumb-1769242901356.jpg",
+      "year": 2026
+    },
+    {
+      "tmdb": { "type": "tv", "id": "295890", "season": 1, "vote_average": 0, "vote_count": 0 },
+      "imdb": { "id": "", "vote_average": 0, "vote_count": 0 },
+      "modified": { "time": "2026-02-05T20:27:17.000Z" },
+      "_id": "69763111ae6f0c1fdf36dc1e",
+      "name": "Hoàng Hậu Giá Lâm",
+      "slug": "hoang-hau-gia-lam",
+      "origin_name": "皇后驾到",
+      "thumb_url": "hoang-hau-gia-lam-thumb.jpg",
+      "year": 2026
+    },
+    {
+      "tmdb": { "type": "tv", "id": "274776", "season": 1, "vote_average": 0, "vote_count": 0 },
+      "imdb": { "id": "tt37024136", "vote_average": 0, "vote_count": 0 },
+      "modified": { "time": "2026-02-05T20:25:17.000Z" },
+      "_id": "69845d5ed88856be7713a076",
+      "name": "Không quen",
+      "slug": "khong-quen",
+      "origin_name": "Unfamiliar",
+      "thumb_url": "khong-quen-thumb.jpg",
+      "year": 2026
+    },
+    {
+      "tmdb": { "type": "tv", "id": "269160", "season": 1, "vote_average": 0, "vote_count": 0 },
+      "imdb": { "id": "tt34139155", "vote_average": 0, "vote_count": 0 },
+      "modified": { "time": "2026-02-05T20:24:04.000Z" },
+      "_id": "69845dc8f07c400a86c450ae",
+      "name": "Nữ hoàng tiền mặt",
+      "slug": "nu-hoang-tien-mat",
+      "origin_name": "Cash Queens",
+      "thumb_url": "nu-hoang-tien-mat-thumb.jpg",
+      "year": 2026
+    },
+    {
+      "tmdb": { "type": "tv", "id": "284735", "season": 1, "vote_average": 10, "vote_count": 1 },
+      "imdb": { "id": "", "vote_average": 0, "vote_count": 0 },
+      "modified": { "time": "2026-02-05T20:11:47.000Z" },
+      "_id": "697a1161eea244e3e8a6b5f4",
+      "name": "Xuyên Không Về 1995 Để Yêu Anh",
+      "slug": "xuyen-khong-ve-1995-de-yeu-anh",
+      "origin_name": "Once More Love in 1995",
+      "thumb_url": "xuyen-khong-ve-1995-de-yeu-anh-thumb.jpg",
+      "year": 2026
+    },
+    {
+      "tmdb": { "type": "tv", "id": "229043", "season": 1, "vote_average": 0, "vote_count": 0 },
+      "imdb": { "id": "", "vote_average": 0, "vote_count": 0 },
+      "modified": { "time": "2026-02-05T20:09:45.000Z" },
+      "_id": "692d8631e3594b9235944b06",
+      "name": "Bạn Thân Yêu Thương (Mùa 3)",
+      "slug": "ban-than-yeu-thuong-mua-3",
+      "origin_name": "Best Friends",
+      "thumb_url": "ban-than-yeu-thuong-mua-3-thumb.jpg",
+      "year": 2023
+    },
+    {
+      "tmdb": { "type": "tv", "id": "254532", "season": 2, "vote_average": 0, "vote_count": 0 },
+      "imdb": { "id": "", "vote_average": 0, "vote_count": 0 },
+      "modified": { "time": "2026-02-05T20:09:26.000Z" },
+      "_id": "695be65bf65d22d617a4122c",
+      "name": "Chúng Ta Ngang Tài Ngang Sức (Phần 2)",
+      "slug": "chung-ta-ngang-tai-ngang-suc-phan-2",
+      "origin_name": "Live and Love (Season 2)",
+      "thumb_url": "chung-ta-ngang-tai-ngang-suc-phan-2-thumb.jpg",
+      "year": 2026
+    },
+    {
+      "tmdb": { "type": "tv", "id": "301886", "season": 1, "vote_average": 9.5, "vote_count": 4 },
+      "imdb": { "id": "tt39303266", "vote_average": 0, "vote_count": 0 },
+      "modified": { "time": "2026-02-05T17:41:49.000Z" },
+      "_id": "695a54a6da6ce23e8e94ae5a",
+      "name": "Gửi Tên Trộm Yêu Dấu Của Ta",
+      "slug": "gui-ten-trom-yeu-dau-cua-ta",
+      "origin_name": "To My Beloved Thief",
+      "thumb_url": "gui-ten-trom-yeu-dau-cua-ta-thumb.jpg",
+      "year": 2026
+    },
+    {
+      "tmdb": { "type": "tv", "id": "280948", "season": 1, "vote_average": 7.9, "vote_count": 11 },
+      "imdb": { "id": "tt39137681", "vote_average": 0, "vote_count": 0 },
+      "modified": { "time": "2026-02-05T17:35:11.000Z" },
+      "_id": "695c9827124287e082503599",
+      "name": "Cơn Say Mùa Xuân",
+      "slug": "con-say-mua-xuan",
+      "origin_name": "Spring Fever",
+      "thumb_url": "con-say-mua-xuan-thumb.jpg",
+      "year": 2026
+    },
+    {
+      "tmdb": { "type": "movie", "id": "801937", "season": null, "vote_average": 6.254, "vote_count": 61 },
+      "imdb": { "id": "tt34508974", "vote_average": 0, "vote_count": 0 },
+      "modified": { "time": "2026-02-05T17:08:35.000Z" },
+      "_id": "698204fe988d934ea9e640af",
+      "name": "Đêm Giáng Sinh Đẫm Máu",
+      "slug": "dem-giang-sinh-dam-mau",
+      "origin_name": "Silent Night, Deadly Night",
+      "thumb_url": "dem-giang-sinh-dam-mau-thumb.jpg",
+      "year": 2025
+    },
+    {
+      "tmdb": { "type": "tv", "id": "278882", "season": 1, "vote_average": 9, "vote_count": 1 },
+      "imdb": { "id": "tt34903451", "vote_average": 0, "vote_count": 0 },
+      "modified": { "time": "2026-02-05T17:05:15.000Z" },
+      "_id": "697da92cd88856be77131748",
+      "name": "Tuổi Trẻ Tài Cao",
+      "slug": "tuoi-tre-tai-cao",
+      "origin_name": "No Pain No Gain",
+      "thumb_url": "tuoi-tre-tai-cao-thumb.jpg",
+      "year": 2026
+    },
+    {
+      "tmdb": { "type": "tv", "id": "261676", "season": 1, "vote_average": 9, "vote_count": 1 },
+      "imdb": { "id": "tt27936835", "vote_average": 0, "vote_count": 0 },
+      "modified": { "time": "2026-02-05T17:04:26.000Z" },
+      "_id": "6981cce4d88856be77137069",
+      "name": "Tàn Tích Của Gió",
+      "slug": "tan-tich-cua-gio",
+      "origin_name": "The Truth",
+      "thumb_url": "tan-tich-cua-gio-thumb.jpg",
+      "year": 2026
+    },
+    {
+      "tmdb": { "type": "tv", "id": "259554", "season": 1, "vote_average": 9, "vote_count": 1 },
+      "imdb": { "id": "tt30829335", "vote_average": 0, "vote_count": 0 },
+      "modified": { "time": "2026-02-05T17:04:04.000Z" },
+      "_id": "6979e28646046a8eb68576e4",
+      "name": "Sắc Đêm Ngập Tràn",
+      "slug": "sac-dem-ngap-tran",
+      "origin_name": "The Glamorous Night",
+      "thumb_url": "sac-dem-ngap-tran-thumb.jpg",
+      "year": 2026
+    }
+  ],
+  "pathImage": "https://img.ophim.live/uploads/movies/",
+  "pagination": {
+    "totalItems": 34485,
+    "totalItemsPerPage": 24,
+    "currentPage": 1,
+    "totalPages": 1437
+  }
+}
