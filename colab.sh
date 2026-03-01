@@ -1,134 +1,93 @@
 #!/usr/bin/env bash
 
-shopt -s nullglob
+set -o pipefail
+shopt -s nullglob nocaseglob
 
-SUPPORTED_EXT=("7z" "zip" "rar" "tar" "gz" "bz2" "xz")
-MARK_DIR="/tmp/extract_marks"
+EXTS=("7z" "zip" "rar" "tar" "gz" "bz2" "xz")
+MARK_DIR="/tmp/extract_done"
 
-mkdir -p "$MARK_DIR"
-
-print_menu() {
-    echo "=============================="
-    echo "1) Giải nén tất cả file trong thư mục hiện tại"
-    echo "2) Giải nén theo pattern"
-    echo "3) Thoát"
-    echo "=============================="
-    read -rp "Chọn: " choice
+init() {
+    mkdir -p "$MARK_DIR" || { echo "Init fail"; exit 1; }
+    command -v 7z >/dev/null 2>&1 || { echo "7z not found"; exit 1; }
 }
 
 is_supported() {
-    local file="$1"
-    local ext="${file##*.}"
-    for e in "${SUPPORTED_EXT[@]}"; do
+    local f="$1"
+    local ext="${f##*.}"
+    for e in "${EXTS[@]}"; do
         [[ "$ext" == "$e" ]] && return 0
     done
     return 1
 }
 
-mark_file() {
-    local file="$1"
-    local hash
-    hash=$(echo -n "$file" | md5sum | awk '{print $1}')
-    echo "$MARK_DIR/$hash.done"
+mark_path() {
+    local f="$1"
+    local h
+    h=$(printf "%s" "$f" | md5sum | awk '{print $1}')
+    echo "$MARK_DIR/$h.done"
 }
 
-already_done() {
-    local mark
-    mark=$(mark_file "$1")
-    [[ -f "$mark" ]]
+is_done() {
+    local f="$1"
+    [[ -f "$(mark_path "$f")" ]]
 }
 
 set_done() {
-    local mark
-    mark=$(mark_file "$1")
-    touch "$mark"
+    touch "$(mark_path "$1")"
 }
 
-analyze_archive() {
-    local file="$1"
-    local list
-    list=$(7z l -ba "$file" 2>/dev/null | awk '{print $NF}' | sed '/^$/d')
+extract_one() {
+    local f="$1"
 
-    local roots=()
-    local has_root_file=0
+    is_supported "$f" || return
 
-    while IFS= read -r entry; do
-        entry="${entry#./}"
-        local top="${entry%%/*}"
-        if [[ "$entry" != */* ]]; then
-            has_root_file=1
-        fi
-        [[ -n "$top" ]] && roots+=("$top")
-    done <<< "$list"
-
-    local unique
-    unique=$(printf "%s\n" "${roots[@]}" | sort -u | wc -l)
-
-    if [[ "$unique" -eq 1 && "$has_root_file" -eq 0 ]]; then
-        return 0
-    else
-        return 1
-    fi
-}
-
-extract_archive() {
-    local file="$1"
-
-    if ! is_supported "$file"; then
+    if is_done "$f"; then
+        printf "Skip  : %s\n" "$f"
         return
     fi
 
-    if already_done "$file"; then
-        printf "[Skip] %s\n" "$file"
-        return
-    fi
+    printf "Extract: %s\n" "$f"
 
-    printf "[Extract] %s\n" "$file"
-
-    if analyze_archive "$file"; then
-        if 7z x -y "$file" >/dev/null 2>&1; then
-            set_done "$file"
-            printf "[Done] %s\n" "$file"
-        else
-            printf "[Fail] %s\n" "$file"
-        fi
+    if 7z x -y "$f" >/dev/null 2>&1; then
+        set_done "$f"
+        printf "Done  : %s\n" "$f"
     else
-        local base="${file%.*}"
-        mkdir -p "$base"
-        if 7z x -y "$file" -o"$base" >/dev/null 2>&1; then
-            set_done "$file"
-            printf "[Done] %s\n" "$file"
-        else
-            printf "[Fail] %s\n" "$file"
-        fi
+        printf "Fail  : %s\n" "$f"
     fi
 }
 
 extract_all() {
-    local files=(*)
-    for f in "${files[@]}"; do
-        [[ -f "$f" ]] && extract_archive "$f"
+    for f in *; do
+        [[ -f "$f" ]] && extract_one "$f"
     done
 }
 
 extract_pattern() {
-    read -rp "Nhập pattern: " pattern
-    local files=($pattern*)
-    for f in "${files[@]}"; do
-        [[ -f "$f" ]] && extract_archive "$f"
+    read -rp "Pattern: " p
+    [[ -z "$p" ]] && return
+    for f in $p; do
+        [[ -f "$f" ]] && extract_one "$f"
+    done
+}
+
+menu() {
+    while true; do
+        echo "1) Extract all"
+        echo "2) Extract by pattern"
+        echo "3) Exit"
+        read -rp "Choice: " c
+        case "$c" in
+            1) extract_all ;;
+            2) extract_pattern ;;
+            3) exit 0 ;;
+            *) echo "Invalid" ;;
+        esac
     done
 }
 
 main() {
-    while true; do
-        print_menu
-        case "$choice" in
-            1) extract_all ;;
-            2) extract_pattern ;;
-            3) exit 0 ;;
-            *) echo "Lựa chọn không hợp lệ" ;;
-        esac
-    done
+    init
+    menu
 }
 
 main
