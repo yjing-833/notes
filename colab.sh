@@ -1,139 +1,134 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 shopt -s nullglob
 
-MARK_DIR="/tmp/7z_marks"
+SUPPORTED_EXT=("7z" "zip" "rar" "tar" "gz" "bz2" "xz")
+MARK_DIR="/tmp/extract_marks"
+
 mkdir -p "$MARK_DIR"
 
-EXT=("7z" "zip" "rar" "tar" "gz" "bz2" "xz")
-
-read_password() {
-    echo "Enter password (leave empty if none):"
-    read -s PASSWORD
-    echo
+print_menu() {
+    echo "=============================="
+    echo "1) Giải nén tất cả file trong thư mục hiện tại"
+    echo "2) Giải nén theo pattern"
+    echo "3) Thoát"
+    echo "=============================="
+    read -rp "Chọn: " choice
 }
 
-read_password
-
-need_folder() {
+is_supported() {
     local file="$1"
-    local entries root_files top_dirs
+    local ext="${file##*.}"
+    for e in "${SUPPORTED_EXT[@]}"; do
+        [[ "$ext" == "$e" ]] && return 0
+    done
+    return 1
+}
 
-    entries=$(7z l -ba "$file" 2>/dev/null | awk '{print $NF}' | grep -v '^$')
+mark_file() {
+    local file="$1"
+    local hash
+    hash=$(echo -n "$file" | md5sum | awk '{print $1}')
+    echo "$MARK_DIR/$hash.done"
+}
 
-    root_files=$(echo "$entries" | grep -v '/')
-    top_dirs=$(echo "$entries" | awk -F/ '{print $1}' | sort -u | wc -l)
+already_done() {
+    local mark
+    mark=$(mark_file "$1")
+    [[ -f "$mark" ]]
+}
 
-    if [[ -z "$root_files" && "$top_dirs" -eq 1 ]]; then
-        return 1
-    else
+set_done() {
+    local mark
+    mark=$(mark_file "$1")
+    touch "$mark"
+}
+
+analyze_archive() {
+    local file="$1"
+    local list
+    list=$(7z l -ba "$file" 2>/dev/null | awk '{print $NF}' | sed '/^$/d')
+
+    local roots=()
+    local has_root_file=0
+
+    while IFS= read -r entry; do
+        entry="${entry#./}"
+        local top="${entry%%/*}"
+        if [[ "$entry" != */* ]]; then
+            has_root_file=1
+        fi
+        [[ -n "$top" ]] && roots+=("$top")
+    done <<< "$list"
+
+    local unique
+    unique=$(printf "%s\n" "${roots[@]}" | sort -u | wc -l)
+
+    if [[ "$unique" -eq 1 && "$has_root_file" -eq 0 ]]; then
         return 0
-    fi
-}
-
-run_extract() {
-    local file="$1"
-    local outdir="$2"
-    local log result
-
-    log=$(mktemp)
-
-    if [[ -n "$PASSWORD" ]]; then
-        7z x "$file" -o"$outdir" -p"$PASSWORD" -y | tee "$log"
     else
-        7z x "$file" -o"$outdir" -y | tee "$log"
+        return 1
     fi
-
-    result=${PIPESTATUS[0]}
-
-    if grep -qi "Wrong password" "$log"; then
-        rm -f "$log"
-        return 2
-    fi
-
-    rm -f "$log"
-    return $result
 }
 
-extract_one() {
+extract_archive() {
     local file="$1"
-    local mark base result
 
-    [[ -f "$file" ]] || return
-
-    mark="$MARK_DIR/$(basename "$file").done"
-
-    if [[ -f "$mark" ]]; then
-        echo "Skip: $file"
+    if ! is_supported "$file"; then
         return
     fi
 
-    echo "======================================"
-    echo "Extracting: $file"
-    echo "======================================"
-
-    base="${file%.*}"
-    local outdir="."
-
-    if need_folder "$file"; then
-        mkdir -p "$base"
-        outdir="$base"
+    if already_done "$file"; then
+        printf "[Skip] %s\n" "$file"
+        return
     fi
 
-    while true; do
-        run_extract "$file" "$outdir"
-        result=$?
+    printf "[Extract] %s\n" "$file"
 
-        if [[ $result -eq 0 ]]; then
-            touch "$mark"
-            echo "✔ Done: $file"
-            break
-        elif [[ $result -eq 2 ]]; then
-            echo "✘ Wrong password!"
-            read_password
+    if analyze_archive "$file"; then
+        if 7z x -y "$file" >/dev/null 2>&1; then
+            set_done "$file"
+            printf "[Done] %s\n" "$file"
         else
-            echo "✘ Extraction failed!"
-            break
+            printf "[Fail] %s\n" "$file"
         fi
-    done
+    else
+        local base="${file%.*}"
+        mkdir -p "$base"
+        if 7z x -y "$file" -o"$base" >/dev/null 2>&1; then
+            set_done "$file"
+            printf "[Done] %s\n" "$file"
+        else
+            printf "[Fail] %s\n" "$file"
+        fi
+    fi
 }
 
 extract_all() {
-    for e in "${EXT[@]}"; do
-        for f in *."$e"; do
-            extract_one "$f"
-        done
+    local files=(*)
+    for f in "${files[@]}"; do
+        [[ -f "$f" ]] && extract_archive "$f"
     done
 }
 
 extract_pattern() {
-    read -p "Pattern (e.g. abc* or *2024*): " pattern
-    local found=0
-
-    for e in "${EXT[@]}"; do
-        for f in $pattern."$e"; do
-            [[ -f "$f" ]] || continue
-            extract_one "$f"
-            found=1
-        done
+    read -rp "Nhập pattern: " pattern
+    local files=($pattern*)
+    for f in "${files[@]}"; do
+        [[ -f "$f" ]] && extract_archive "$f"
     done
-
-    [[ $found -eq 0 ]] && echo "No match."
 }
 
-while true; do
-    echo
-    echo "========== MENU =========="
-    echo "1. Extract all"
-    echo "2. Extract by pattern"
-    echo "0. Exit"
-    echo "=========================="
-    read -p "Select: " c
+main() {
+    while true; do
+        print_menu
+        case "$choice" in
+            1) extract_all ;;
+            2) extract_pattern ;;
+            3) exit 0 ;;
+            *) echo "Lựa chọn không hợp lệ" ;;
+        esac
+    done
+}
 
-    case "$c" in
-        1) extract_all ;;
-        2) extract_pattern ;;
-        0) exit 0 ;;
-        *) echo "Invalid." ;;
-    esac
-done
+main
