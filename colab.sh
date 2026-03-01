@@ -7,12 +7,17 @@ mkdir -p "$MARK_DIR"
 
 EXT=("7z" "zip" "rar" "tar" "gz" "bz2" "xz")
 
-echo "Password (Enter if none):"
-read -s PASSWORD
-echo
+read_password() {
+    echo "Enter password (leave empty if none):"
+    read -s PASSWORD
+    echo
+}
+
+read_password
 
 need_folder() {
     local file="$1"
+    local entries root_files top_dirs
 
     entries=$(7z l -ba "$file" 2>/dev/null | awk '{print $NF}' | grep -v '^$')
 
@@ -26,8 +31,34 @@ need_folder() {
     fi
 }
 
+run_extract() {
+    local file="$1"
+    local outdir="$2"
+    local log result
+
+    log=$(mktemp)
+
+    if [[ -n "$PASSWORD" ]]; then
+        7z x "$file" -o"$outdir" -p"$PASSWORD" -y | tee "$log"
+    else
+        7z x "$file" -o"$outdir" -y | tee "$log"
+    fi
+
+    result=${PIPESTATUS[0]}
+
+    if grep -qi "Wrong password" "$log"; then
+        rm -f "$log"
+        return 2
+    fi
+
+    rm -f "$log"
+    return $result
+}
+
 extract_one() {
     local file="$1"
+    local mark base result
+
     [[ -f "$file" ]] || return
 
     mark="$MARK_DIR/$(basename "$file").done"
@@ -37,25 +68,34 @@ extract_one() {
         return
     fi
 
-    echo "Extract: $file"
+    echo "======================================"
+    echo "Extracting: $file"
+    echo "======================================"
 
     base="${file%.*}"
+    local outdir="."
 
     if need_folder "$file"; then
         mkdir -p "$base"
-        7z x "$file" -o"$base" -p"$PASSWORD" -y
-        result=$?
-    else
-        7z x "$file" -p"$PASSWORD" -y
-        result=$?
+        outdir="$base"
     fi
 
-    if [[ $result -eq 0 ]]; then
-        touch "$mark"
-        echo "Done: $file"
-    else
-        echo "Fail: $file"
-    fi
+    while true; do
+        run_extract "$file" "$outdir"
+        result=$?
+
+        if [[ $result -eq 0 ]]; then
+            touch "$mark"
+            echo "✔ Done: $file"
+            break
+        elif [[ $result -eq 2 ]]; then
+            echo "✘ Wrong password!"
+            read_password
+        else
+            echo "✘ Extraction failed!"
+            break
+        fi
+    done
 }
 
 extract_all() {
@@ -68,14 +108,13 @@ extract_all() {
 
 extract_pattern() {
     read -p "Pattern (e.g. abc* or *2024*): " pattern
-    found=0
+    local found=0
 
     for e in "${EXT[@]}"; do
         for f in $pattern."$e"; do
-            if [[ -f "$f" ]]; then
-                extract_one "$f"
-                found=1
-            fi
+            [[ -f "$f" ]] || continue
+            extract_one "$f"
+            found=1
         done
     done
 
@@ -83,11 +122,12 @@ extract_pattern() {
 }
 
 while true; do
-    echo "====== MENU ======"
+    echo
+    echo "========== MENU =========="
     echo "1. Extract all"
     echo "2. Extract by pattern"
     echo "0. Exit"
-    echo "=================="
+    echo "=========================="
     read -p "Select: " c
 
     case "$c" in
