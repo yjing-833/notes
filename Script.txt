@@ -1,0 +1,202 @@
+Dưới đây là kịch bản thuyết trình chi tiết kéo dài 35 – 40 phút cho "Bài 11: Chèn tệp tin đa phương tiện và khung nội tuyến vào trang web".
+Để đảm bảo đủ thời lượng 35–40 phút (tương đương 1 tiết học), kịch bản được xây dựng theo mô hình Thuyết trình kết hợp Thực hành tương tác & Thảo luận chuyên sâu (Interactive Teaching Style). Kịch bản bao gồm chi tiết lời thoại, câu hỏi – đáp, mốc thời gian (timeline), cách đọc/dẫn dắt, phân tích mã nguồn chi tiết và mẹo đọc hiểu thuộc bài không cần nhìn slide.
+BỘ NGUYÊN TẮC "GHI NHỚ CỐT LÕI" (BỎ TÀI LIỆU VẪN NÓI ĐƯỢC)
+Để làm chủ bài thuyết trình dài 40 phút mà không bị phụ thuộc vào slide hay giấy nháp, bạn chỉ cần ghi nhớ 3 Trục Kiến Thức Chính theo sơ đồ tư duy (Mindmap) sau:
+ * TRỤC 1: HÌNH ẢNH (<img>) (12 phút)
+   * Bản chất: Thẻ đơn, không ngắt dòng.
+   * 2 nhóm ảnh: Vectơ (SVG, EPS) vs Điểm ảnh (PNG, JPEG, GIF, WebP).
+   * 4 Thuộc tính vàng: src (đường dẫn tương đối), alt (văn bản thay thế), width & height (pixel, tính tỉ lệ).
+ * TRỤC 2: ĐA PHƯƠNG TIỆN ĐỘNG (<video> & <audio>) (12 phút)
+   * Bản chất: Thẻ đôi, chứa nội dung truyền thông.
+   * Thuộc tính điều khiển: controls (bắt buộc phải có), autoplay (kèm muted trên Chrome), poster (ảnh bìa cho video).
+   * Kỹ thuật tương thích: Dùng thẻ con <source> để fallback nhiều định dạng (mp4, webm, ogg).
+ * TRỤC 3: KHUNG NỘI TUYẾN (<iframe>) (10 phút)
+   * Bản chất: Cửa sổ nhúng trang web/tài nguyên khác vào trang hiện tại.
+   * Ứng dụng: Nhúng YouTube, Google Maps, Quảng cáo, liên kết bằng thuộc tính target.
+   * Đánh giá: Ưu điểm (Trải nghiệm mượt, giữ chân người dùng) vs Nhược điểm (Tốn tài nguyên, chậm trang).
+KỊCH BẢN THUYẾT TRÌNH CHI TIẾT (TIMELINE: 35 - 40 PHÚT)
+PHẦN 1: MỞ ĐẦU & KHỞI ĐỘNG (5 PHÚT)
+⏱️ Timeline: 00:00 - 05:00
+ * Mục tiêu: Bắt nhịp, thu hút sự chú ý, tạo không khí tương tác sôi nổi với toàn lớp.
+ * Tư thế & Giọng điệu: Đứng thẳng, tự tin, mở rộng hai tay, giọng nói ấm áp, hào hứng.
+[00:00 - 02:00] Lời chào & Dẫn dắt vấn đề
+[NÓI TRỰC TIẾP]
+> "Chào mừng thầy/cô và tất cả các bạn đã đến với buổi thuyết trình hôm nay!
+> Các bạn thân mến, hãy thử nhớ lại lần gần đây nhất khi bạn lướt web—có thể là đọc báo, shopping online hay tìm tài liệu học tập. Điều gì đã giữ chân các bạn lại ở trang web đó lâu nhất? Có phải là những dòng chữ đen trắng dài ngoẵng như trong sách giáo khoa không?
+> Chắc chắn là không rồi! Chúng ta bị thu hút bởi những hình ảnh sắc nét, những đoạn video review sinh động, hay một bản đồ Google Maps tương tác ngay trên trang. Đó chính là sức mạnh của Đa phương tiện (Multimedia) và Khung nội tuyến (Iframe).
+> Hôm nay, nhóm mình xin phép cùng thầy cô và các bạn khám phá Bài 11: Chèn tệp tin đa phương tiện và khung nội tuyến vào trang web. Qua bài này, chúng ta sẽ tự tay biến một trang web khô xơ thành một giao diện vô cùng sinh động!"
+> 
+[02:00 - 05:00] Hoạt động Khởi động (Tương tác lớp học)
+[NÓI TRỰC TIẾP]
+> "Trước khi đi vào cú pháp mã lệnh, mình có một câu hỏi nhỏ muốn thảo luận cùng cả lớp:"
+> 
+ * CÂU HỎI KHỞI ĐỘNG: "Theo bạn, có những điểm gì khiến bạn thấy hứng thú hơn khi xem các trang web so với việc đọc một cuốn sách truyền thống?"
+ * Cách điều phối & Hỏi:
+   * Hành động: Nhìn quanh lớp, chỉ tay thân thiện mời 2–3 bạn học sinh giơ tay hoặc gọi ngẫu nhiên.
+   * Người trình bày tương tác: "Mời bạn A! Theo bạn thì điểm khác biệt lớn nhất là gì?"
+   * Trả lời dự kiến từ học sinh: "Web có ảnh màu đẹp hơn, xem được video, nghe nhạc được, bấm vào link nhảy sang trang khác được..."
+   * Nhận xét & Chốt chuyển ý: "Cảm ơn bạn A và bạn B! Rất chính xác. Trang web vượt trội hơn sách truyền thống ở tính trực quan, khả năng tương tác và nội dung đa dạng. Vậy làm sao để lập trình viên đưa những yếu tố đó vào trang web? Chúng ta sẽ đến với Phần 1: Chèn tệp ảnh vào trang web!"
+PHẦN 2: CHÈN TỆP ẢNH VÀO TRANG WEB (12 PHÚT)
+⏱️ Timeline: 05:00 - 17:00
+ * Mục tiêu: Phân biệt đồ họa vectơ vs đồ họa điểm ảnh; làm chủ thẻ <img> và 4 thuộc tính cốt lõi.
+ * Tư thế & Giọng điệu: Giọng giảng giải rõ ràng, dùng cử chỉ tay để mô tả kích thước (rộng/cao).
+[05:00 - 08:00] Hoạt động 1: Phân loại định dạng tệp ảnh
+[NÓI TRỰC TIẾP]
+> "Hình ảnh là thành phần cơ bản nhất để làm cho trang web sinh động. Tuy nhiên, không phải tệp ảnh nào cũng giống nhau. Trong thực tế thiết kế, ảnh được chia làm 2 nhóm chính: Đồ họa Vectơ và Đồ họa Điểm ảnh (Raster)."
+> 
+ * CÂU HỎI TƯƠNG TÁC: "Các bạn hãy kể tên các định dạng tệp ảnh mà bạn biết và phân loại chúng giúp mình nhé!"
+ * Gợi ý trả lời & Phân tích chi tiết:
+   * Đồ họa Điểm ảnh (Raster Graphics):
+     * Định dạng: JPEG/JPG, PNG, GIF, BMP, TIFF, PSD.
+     * Đặc điểm (Giải thích thêm không nhìn slide): Được tạo thành từ hàng triệu điểm ảnh (pixel). Khi phóng to ra sẽ bị vỡ nét.
+   * Đồ họa Vectơ (Vector Graphics):
+     * Định dạng: SVG, EPS, AI, PDF.
+     * Đặc điểm: Được tính toán bằng thuật toán toán học. Ph phóng to bao nhiêu cũng không bao giờ bị vỡ nét.
+   * Lưu ý quan trọng cho Lập trình viên Web:
+     * Trình duyệt web hỗ trợ hiển thị tốt nhất các định dạng: PNG, JPEG, GIF, JPEG-XR, WebP.
+     * Các định dạng đồ họa chuyên dụng như TIFF, EPS hay file thiết kế PSD, AI không thể hiển thị trực tiếp mà phải xuất/chuyển đổi (export) sang định dạng chuẩn web trước khi chèn!
+[08:00 - 13:00] Cú pháp Thẻ <img> & Phân tích thuộc tính
+[NÓI TRỰC TIẾP]
+> "Để chèn một bức ảnh vào trang web, trong HTML chúng ta sử dụng thẻ <img>.
+> Có 2 đặc điểm cực kỳ quan trọng về thẻ <img> mà bạn phải nhớ khi đi thi hoặc làm bài thực hành:
+>  * Thẻ <img> là thẻ đơn (tức là không có thẻ đóng </img>).
+>  * Thẻ <img> là phần tử nội tuyến (inline element), nghĩa là nó có thể chèn trực tiếp vào trong dòng văn bản mà không làm nhảy sang dòng mới."
+> 
+ * Ví dụ trực quan về chèn ảnh trong dòng:
+   * Mã lệnh: <p>Tôi muốn uống một cốc <img src="images/coffee.png"> ngay bây giờ.</p>
+   * Hiển thị: Bức ảnh ly cà phê nhỏ sẽ nằm ngay cạnh chữ "một cốc" và trước chữ "ngay bây giờ" trên cùng một dòng.
+[NÓI TRỰC TIẾP]
+> "Bây giờ, chúng ta sẽ mổ xẻ cú pháp chuẩn của thẻ <img>:
+> <img src="đường_dẫn_tệp_ảnh" alt="văn_bản_thay_thế" width="giá_trị" height="giá_trị">
+> Hãy cùng mình phân tích 4 thuộc tính này nhé:
+>  * 1. Thuộc tính src (Source - Bắt buộc):
+>    * Dùng để chỉ đường dẫn đến tệp hình ảnh.
+>    * Mẹo đường dẫn tương đối: Bạn nên dùng đường dẫn tương đối (ví dụ images/coffee.png) thay vì đường dẫn tuyệt đối hay link mạng kém ổn định, giúp trang web không bị lỗi khi đổi máy chủ hay di chuyển thư mục.
+>  * 2. Thuộc tính alt (Alternate Text - Quan trọng):
+>    * Cung cấp văn bản mô tả thay thế khi ảnh gặp sự cố không hiển thị được (như mất mạng, sai đường dẫn).
+>    * Ví dụ: Nếu bạn nhúng tệp pdfiles.png làm biểu tượng tải tài liệu, nếu tệp ảnh bị xóa, trình duyệt sẽ hiện dòng chữ "Biểu mẫu xin nhập học" giúp người dùng vẫn hiểu nút đó để làm gì!
+>  * 3. Thuộc tính width và height (Kích thước ảnh):
+>    * Dùng đơn vị đo là pixel (px).
+>    * Quy tắc tỉ lệ vàng: Nếu bạn thiết lập cả width và height, ảnh sẽ bị ép theo đúng kích thước đó (có thể bị méo ảnh nếu sai tỉ lệ gốc). Nhưng nếu bạn chỉ khai báo 1 thuộc tính (ví dụ đặt width="131"), trình duyệt sẽ tự động tính toán chiều cao height theo đúng tỉ lệ ảnh gốc để ảnh không bị biến dạng!"
+> 
+[13:00 - 17:00] Củng cố & Đố vui phần Hình ảnh (Q&A)
+[NÓI TRỰC TIẾP]
+> "Đó là toàn bộ lý thuyết về phần hình ảnh. Để đảm bảo cả lớp đã thuộc bài tại chỗ, mình có 2 câu hỏi trắc nghiệm nhanh dành cho các bạn!"
+> 
+ * CÂU HỎI CỦNG CỐ 1:
+   * Hỏi: "Khẳng định 'Thẻ <img> chỉ dùng khi chèn ảnh dạng .jpg vào trang web' là Đúng hay Sai?"
+   * Mời học sinh phát biểu.
+   * Đáp án chuẩn: Sai! Thẻ <img> hỗ trợ rất nhiều định dạng khác như PNG, GIF, BMP, SVG, WebP...
+ * CÂU HỎI CỦNG CỐ 2:
+   * Hỏi: "Hãy nêu các trường hợp có thể xảy ra lỗi khiến ảnh không hiển thị được trên trang web?"
+   * Mời học sinh phát biểu.
+   * Đáp án chuẩn: Có 5 trường hợp chính:
+     * Đường dẫn đến tệp ảnh bị sai syntax hoặc sai thư mục.
+     * Tệp ảnh không tồn tại hoặc đã bị xóa khỏi máy chủ.
+     * Định dạng ảnh không được trình duyệt hỗ trợ (ví dụ đưa file .psd vào).
+     * Máy chủ chứa ảnh gặp sự cố kết nối.
+     * Kích thước ảnh quá lớn gây timeout tải trang.
+PHẦN 3: CHÈN ÂM THANH VÀ VIDEO VÀO TRANG WEB (12 PHÚT)
+⏱️ Timeline: 17:00 - 29:00
+ * Mục tiêu: Nắm vững cú pháp thẻ <video> và <audio>, hiểu cơ chế thuộc tính điều khiển và kỹ thuật dùng thẻ <source> đa định dạng.
+ * Tư thế & Giọng điệu: Năng lượng, nhịp điệu vừa phải, nhấn mạnh các thuộc tính tính năng.
+[17:00 - 20:00] Hoạt động 2: Nhận biết thẻ và thuộc tính Video
+[NÓI TRỰC TIẾP]
+> "Nếu như hình ảnh giúp trang web đẹp mắt, thì Âm thanh và Video chính là chìa khóa để tạo nên sự bùng nổ về cảm xúc và thông tin!
+> Trước đây khi chưa có HTML5, việc chèn video cực kỳ phức tạp và cần cài phần mềm bên thứ ba như Flash Player. Nhưng bây giờ, HTML5 cung cấp 2 thẻ chuyên dụng là <video> và <audio>.
+> Mời các bạn quan sát đoạn mã lệnh sau trên màn hình và cho mình biết chức năng của nó là gì:"
+> 
+ * Mã hiển thị trên Slide/Bảng:
+   <video src="videos/war_is_over.mp4" width="300" height="250" autoplay>
+ * Mời học sinh phân tích:
+   * Học sinh trả lời: Đã dùng tệp video war_is_over.mp4, rộng 300px, cao 250px, tự động chạy.
+   * Trình bày bổ sung / Giải thích: "Rất chuẩn! Đoạn mã này nhúng một video vào trang web với kích thước rộng 300px, cao 250px và cài đặt tự động phát khi tải trang. Tuy nhiên, đoạn mã này vẫn còn thiếu một thuộc tính quan trọng để người dùng tương tác—đó là gì, chúng ta sẽ tìm hiểu ngay sau đây!"
+[20:00 - 25:00] Cấu trúc thẻ <video>, <audio> & Bộ Thuộc Tính Quyền Lực
+[NÓI TRỰC TIẾP]
+> "Khác với thẻ <img> là thẻ đơn, thẻ <video> và <audio> là thẻ đôi (có thẻ mở và thẻ đóng).
+> Cú pháp tổng quát:
+> <video thuộc_tính="giá_trị"></video>
+> <audio thuộc_tính="giá_trị"></audio>
+> Về định dạng hỗ trợ phổ biến:
+>  * Video: Phổ biến nhất là .mp4 (chạy mượt trên hầu như tất cả trình duyệt hiện nay) và .webm.
+>  * Âm thanh: Phổ biến là .mp3, .wav, và .ogg.
+> Bộ thuộc tính tính năng quan trọng bạn phải thuộc lòng:
+>  * src, width, height: Tương tự như thẻ ảnh (chú ý: thẻ <audio> không có width, height và poster).
+>  * controls: Đây là thuộc tính bắt buộc nếu bạn muốn người dùng bấm Play, Pause, kéo thanh thời gian hoặc chỉnh âm lượng. Nếu không có controls, video chỉ là một hình tĩnh đứng yên trừ khi cài tự động phát!
+>  * autoplay: Tự động phát tệp ngay khi tải trang.
+>    * Mẹo thực tế cực hay: Hiện nay, chính sách của các trình duyệt lớn như Google Chrome cấm video tự động phát ra tiếng gây phiền người dùng. Do đó, muốn autoplay hoạt động, bạn bắt buộc phải kèm thêm thuộc tính muted (tắt tiếng)!
+>  * poster: Chỉ áp dụng cho thẻ <video>. Dùng để chỉ định một tệp ảnh làm "ảnh đại diện/ảnh bìa" hiển thị trước khi người dùng nhấn nút Play."
+> 
+[25:00 - 29:00] Xử lý tương thích trình duyệt với thẻ <source>
+[NÓI TRỰC TIẾP]
+> "Trong thực tế, mỗi trình duyệt (Chrome, Safari, Firefox, Edge) lại ưa chuộng một định dạng video khác nhau. Làm thế nào để đảm bảo người dùng nào mở web cũng xem được video?
+> Giải pháp là chúng ta sử dụng thẻ con <source> đặt bên trong thẻ <video> hoặc <audio>.
+> Hãy xem đoạn mã sau:"
+> 
+<video width="320" height="240" controls>
+  <source src="movie.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+  Trình duyệt của bạn không hỗ trợ thẻ video HTML.
+</video>
+
+[NÓI TRỰC TIẾP]
+> "Trình duyệt sẽ hoạt động theo cơ chế quét từ trên xuống dưới:
+>  * Nó sẽ thử mở tệp movie.mp4 trước. Nếu hỗ trợ, nó sẽ phát tệp này và bỏ qua các dòng dưới.
+>  * Nếu không hỗ trợ MP4, nó sẽ chuyển sang thử tệp movie.ogg.
+>  * Nếu trình duyệt quá cũ không hỗ trợ cả hai, nó sẽ hiển thị dòng văn bản thông báo lỗi phía dưới.
+> Cách viết này giúp trang web của chúng ta đạt độ tương thích cao nhất trên mọi thiết bị!"
+> 
+PHẦN 4: TẠO MÃ KHUNG NỘI TUYẾN - IFRAME (10 PHÚT)
+⏱️ Timeline: 29:00 - 39:00
+ * Mục tiêu: Thấu hiểu bản chất Khung nội tuyến (<iframe>), cú pháp, ứng dụng nhúng YouTube/Maps và đánh giá ưu/nhược điểm.
+ * Tư thế & Giọng điệu: Giọng điệu điềm tĩnh, tính phân tích cao.
+[29:00 - 32:00] Hoạt động 3: Khái niệm & Trải nghiệm giao diện
+[NÓI TRỰC TIẾP]
+> "Chúng ta đến với thành phần cuối cùng nhưng vô cùng lợi hại: Khung nội tuyến (Inline Frame).
+> Chắc hẳn các bạn đã từng gặp trường hợp đọc một bài báo, và ngay giữa bài viết có nhúng một video YouTube hay một bản đồ Google Maps chỉ đường, bạn có thể bấm xem video hoặc thu phóng bản đồ ngay tại đó mà không bị nhảy sang trang khác."
+> 
+ * CÂU HỎI THẢO LUẬN: "Em có nhận xét gì về giao diện và trải nghiệm người dùng khi thao tác bên trong khung nội tuyến này?"
+ * Gợi ý phân tích 2 mặt (Ưu & Nhược điểm):
+   * Ưu điểm:
+     * Tập trung nội dung, giúp người dùng không phải chuyển trang nhiều lần.
+     * Tăng tính tương tác trực quan, giữ chân người dùng ở lại trang lâu hơn.
+     * Tối ưu hóa không gian hiển thị.
+   * Nhược điểm:
+     * Nếu chèn quá nhiều khung iframe, trang web sẽ rất nặng và tải chậm.
+     * Chiếm nhiều không gian nếu thiết kế không hợp lý, làm phân tán sự chú ý vào nội dung chính.
+[32:00 - 36:00] Cú pháp Thẻ <iframe> & Ví dụ ứng dụng
+[NÓI TRỰC TIẾP]
+> "Khung nội tuyến được tạo ra bằng thẻ <iframe>.
+> Định nghĩa chuẩn: Khung nội tuyến là một 'cửa sổ nhìn' chứa một tài nguyên web khác nằm ngay trong trang web hiện tại.
+> Cú pháp:
+> <iframe src="đường_dẫn_tài_nguyên" width="chiều_rộng" height="chiều_cao"></iframe>
+> Các thuộc tính cơ bản gồm src (đường dẫn trang web/tài nguyên nhúng), width và height.
+> Ví dụ cụ thể: Để tạo một khung kích thước 600 \times 400 pixel hiển thị nội dung trang web CLB.html nằm trong trang iframe.html, ta viết:
+> <iframe src="CLB.html" width="600" height="400"></iframe>
+> Khi mở trang iframe.html trên trình duyệt, một khung hình nhỏ sẽ xuất hiện chứa toàn bộ trang CLB.html với đầy đủ thông tin về các hoạt động ngoại khóa, câu lạc bộ... mà người dùng có thể cuộn xem trực tiếp!"
+> 
+ * Mẹo nâng cao (Kết hợp thuộc tính target):
+   * "Một mẹo nhỏ rất hay: Thẻ <iframe> thường kết hợp với thẻ liên kết <a>. Bằng cách đặt tên name cho iframe (ví dụ name="myFrame"), rồi ở thẻ <a> ta thêm thuộc tính target="myFrame", khi người dùng bấm vào liên kết, nội dung mới sẽ được tải và hiển thị ngay bên trong khung iframe đó chứ không làm mở trang mới!"
+[36:00 - 39:00] Hỏi đáp nâng cao về <iframe>
+ * Hỏi: "Theo các bạn, ngoài việc nhúng YouTube hay Google Maps, người ta thường dùng <iframe> để làm gì nữa?"
+ * Trả lời: "Dùng để hiển thị các biểu ngữ quảng cáo (Ads) từ các mạng quảng cáo bên ngoài, hoặc nhúng các tiện ích như dự báo thời tiết, tỷ giá hối đoái, cửa sổ Chatbot hỗ trợ khách hàng!"
+PHẦN 5: TỔNG KẾT, CẢM ƠN & ĐÁP ỨNG Q&A (1 - 2 PHÚT)
+⏱️ Timeline: 39:00 - 40:00
+ * Mục tiêu: Tóm tắt 3 điểm cốt lõi trong 30 giây, tạo ấn tượng chuyên nghiệp khi kết thúc bài nói.
+ * Tư thế & Giọng điệu: Giọng tự tin, mỉm cười, cúi chào lịch sự.
+[NÓI TRỰC TIẾP]
+> "Kính thưa thầy/cô và các bạn, vậy là trong khoảng 40 phút vừa qua, chúng ta đã cùng nhau làm chủ 3 công cụ cốt lõi để xây dựng một trang web đa phương tiện:
+>  * Thẻ <img>: Chèn ảnh tĩnh/động với thuộc tính src, alt, width, height.
+>  * Thẻ <video> & <audio>: Nhúng truyền thông động với bộ thuộc tính controls, autoplay, poster và giải pháp đa định dạng <source>.
+>  * Thẻ <iframe>: Mở cửa sổ nhúng tài nguyên ngoại vi vào trang web.
+> Hy vọng bài thuyết trình này đã giúp các bạn không chỉ nắm vững lý thuyết mà còn tự tin áp dụng vào bài thực hành thiết kế trang web sắp tới.
+> Nhóm mình xin chân thành cảm ơn thầy/cô và các bạn đã chú ý lắng nghe! Sau đây, nhóm xin nhận các câu hỏi góp ý từ thầy cô và cả lớp ạ!"
+> 
+BẢNG TÓM TẮT PHÂN CHIA THỜI GIAN (CHECKLIST DÀNH CHO BẠN)
+| STT | Bức tranh tổng quát | Thời lượng | Công cụ / Thẻ HTML chính | Nội dung cốt lõi |
+|---|---|---|---|---|
+| 1 | Khởi động & Mở đầu | 5 phút | N/A | Dẫn dắt vấn đề, thảo luận so sánh Web vs Sách |
+| 2 | Chèn tệp ảnh | 12 phút | <img> | Vectơ vs Điểm ảnh, thuộc tính src, alt, width, height, Củng cố Q&A |
+| 3 | Chèn Video & Audio | 12 phút | <video>, <audio>, <source> | Đuôi mp4/mp3, thuộc tính controls, autoplay, poster, kỹ thuật đa định dạng |
+| 4 | Khung nội tuyến | 10 phút | <iframe> | Bản chất nhúng, ví dụ CLB.html, Đánh giá Ưu / Nhược điểm |
+| 5 | Tổng kết & Cảm ơn | 1 phút | N/A | Chốt 3 từ khóa chính và mở rộng Q&A cuối buổi |
